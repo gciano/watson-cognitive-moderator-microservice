@@ -29,11 +29,11 @@ Want to take your Watson app to the next level? Looking to leverage Watson Brand
 
 TBD
 
-# Watch the Video
+## Watch the Video
 
 TBD
 
-# Steps
+## Steps
 
 Use the ``Deploy to IBM Cloud`` button **OR** create the services and run locally.
 ...
