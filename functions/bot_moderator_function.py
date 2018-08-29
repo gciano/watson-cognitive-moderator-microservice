@@ -6,8 +6,8 @@ from watson_developer_cloud import VisualRecognitionV3
 from watson_developer_cloud import NaturalLanguageUnderstandingV1
 from watson_developer_cloud.natural_language_understanding_v1 import Features, EntitiesOptions, KeywordsOptions
 
-VERIFICATION_TOKEN = 'MgIF0jmaV53frVWpSnWimIYJ' # Slack verification token
-ACCESS_TOKEN = 'xoxp-381284086564-381284086836-382410955590-fa298875bb7d59352086204ec34b066b' # Slack OAuth access token
+VERIFICATION_TOKEN = 'slack verification token' # Slack verification token
+ACCESS_TOKEN = 'Slack OAuth access token' # Slack OAuth access token
 
 SUPPORTED_IMAGES = ['image/jpeg', 'image/jpg', 'image/png']
 
