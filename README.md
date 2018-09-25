@@ -35,6 +35,39 @@ TBD
 
 ## Steps
 
+### Configuration steps for the IBM Cloud
 Use the ``Deploy to IBM Cloud`` button **OR** create the services and run locally.
 ...
 ...
+
+### Configuration steps for the Slack Application
+
+Create the Slack Application
+* Create a slack app as described in the following link: https://api.slack.com/slack-apps#creating_apps
+* From the tab Basic Information under Settings take note of the "Verification Token" since it will be required later
+* Navigate to the OAuth & Permissions tab under Features
+* Under the Permissions Scopes section add the following permissions:
+  - channels:history
+  - chat:write:bot
+  - files:read
+  - files:write:user
+* Click Save Changes
+* Click Install App to Team then Authorize 
+* Then write down the "OAuth Access Token" as it will be needed later
+
+Update the code with the generated above tokens
+* Replace in the IBM Function "ProcessMessage" code the tokens saved above
+  - VERIFICATION_TOKEN = # Slack verification token
+  - ACCESS_TOKEN =  # Slack OAuth access token
+they are needed to allow the interaction with the Slack messages
+
+Retrieve the Action Web API URL
+* Go to the IBM Functions APIs section that describes the API that invoke the action: https://console.bluemix.net/openwhisk/apimanagement and copy the route of the IBM Functions Action called "ProcessMessage".
+
+Update the Slack Application with the Action URL
+* Return to the Slack app settings page for the Slack app created earlier
+* Navigate to the Event Subscriptions tab under Features and enable events
+* In the Request URL field enter the Web API IBM Functions copied above
+* Click Add Workspace Event and select message.channels
+* Click Save Changes
+In this way all the messages posted on Slack will be processed by the IBM Function code.
